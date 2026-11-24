@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba USB</title>
+</head>
+<body>
+
+    <h1>Explorador USB</h1>
+
+    <input type="file" id="archivos" multiple>
+
+    <pre id="resultado"></pre>
+
+    <script>
+        document.getElementById("archivos").onchange = function () {
+            var resultado = "";
+
+            for (var i = 0; i < this.files.length; i++) {
+                resultado += this.files[i].name + "\n";
+            }
+
+            document.getElementById("resultado").textContent = resultado;
+        };
+    </script>
+
+</body>
+</html>
